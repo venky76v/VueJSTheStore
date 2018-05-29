@@ -20,6 +20,9 @@
                 category: "Temp products",
                 onSale: true
             })
+        },
+        onSort: function (by) {
+            this.products = _.sortBy(this.products, by);
         }
     },
     mounted: function () {

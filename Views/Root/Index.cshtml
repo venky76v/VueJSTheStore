@@ -1,11 +1,11 @@
-﻿@section scripts {
+﻿@section Scripts {
     <script src="~/lib/vue/dist/vue.js"></script>
     <script src="~/lib/axios/dist/axios.min.js"></script>
+    <script src="~/lib/lodash/lodash.min.js"></script>
     <script src="~/js/filter.js"></script>
-    <script src="~/js/indexPage.js"></script>
-
-    
+    <script src="~/js/indexPage.js"></script>    
 }
+
     <div id="index-page">
         <h2>{{ appName }}</h2>
         <div>Today : {{ today | date }}</div>
@@ -16,7 +16,7 @@
         <div class="btn-group">
             <button class="btn btn-info" v-on:click="onSort('listPrice')">Sort by Price</button>
             <button class="btn btn-info" v-on:click="onSort('name')">Sort by Name</button>
-            <a href="/checkout" class="btn btn-info">Checkout</a>
+            <a asp-controller="Root" asp-action="Checkout" class="btn btn-info">Checkout</a>
         </div>
 
         <button class="btn btn-warning" v-on:click="addProduct()">Add</button>
