@@ -1,4 +1,6 @@
-﻿var vm = new Vue({
+﻿Vue.use(VeeValidate);
+
+var vm = new Vue({
     el: "#checkout",
     data: {
         customer: {
@@ -17,7 +19,13 @@
     },
     methods: {
         onSave: function () {
-            alert(JSON.stringify(this.customer));
+            this.$validator.validateAll()
+                .then(function (result) {
+                    if (result) {
+                        // Call API to save data to dabatase
+                    }
+                })
+
         }
     }
 })
